@@ -1,12 +1,28 @@
 
 function getComputerChoice() {
-    let info = "tbd";
-    console.log(info);
+    let randomChoice = parseInt(Math.random() * 3);
+    if (randomChoice === 0) {
+        let computerChoice = "rock";
+        return computerChoice;
+    } else if (randomChoice == 1) {
+        let computerChoice = "paper";
+        return computerChoice;
+    } else {
+        let computerChoice = "scissors";
+        return computerChoice;  
+    }
 }
 
 function getHumanChoice() {
-    let txt = prompt("Rock, Paper, or Scissors?");
-    console.log(txt);
+    let answer = prompt("Rock, Paper, or Scissors?");
+    console.log(answer);
+    let humanChoice = answer.toLowerCase();
+    if (!(humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors")) {
+        alert("Answer is not Rock, Paper, or Scissors! Please try again...");
+        return getHumanChoice();
+    } else {
+        return humanChoice;
+    }
 }
 
 
@@ -16,12 +32,19 @@ console.log(computerScore)
 
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = 'tbd';
-    computerChoice = 'tbd';
+    console.log(humanChoice, computerChoice);
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
 
 
 function playGame(){
-    "to be defined";
+    for (i = 1; i <= 5; i++) {
+        let x = 3;
+    }
 }
 
