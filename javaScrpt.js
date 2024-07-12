@@ -26,25 +26,49 @@ function getHumanChoice() {
 }
 
 
-let humanScore, computerScore = 0;
-console.log(humanScore)
-console.log(computerScore)
+let humanScore = 0, computerScore = 0, rounds = 0;
+console.log(humanScore, computerScore, rounds);
 
 
 function playRound(humanChoice, computerChoice) {
-    console.log(humanChoice, computerChoice);
-}
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-
-
-function playGame(){
-    for (i = 1; i <= 5; i++) {
-        let x = 3;
+    console.log("Human Choice: " + humanChoice, "Computer Choice: " + computerChoice);
+    if (humanChoice == computerChoice) {
+        console.log("There's no winner, it's a tie!");
+    } else if (
+        computerChoice === "rock" && humanChoice === "paper" ||
+        computerChoice === "scissors" && humanChoice === "rock" ||
+        computerChoice === "paper" && humanChoice === "scissors"
+    ) {
+        console.log("Human wins! Good game!");
+        humanScore = humanScore + 1;
+        humanScore++;
+    } else {
+        console.log("Computer Wins! Great job Robot!")
+        computerScore++;
     }
+    rounds ++
+    console.log("Human Score: " + humanScore, "Computer Score: " + computerScore, "Rounds: " + rounds);
 }
 
+
+function playGame() {
+    while (rounds < 5) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore > computerScore) {
+        console.log("Human wins!! Congrats hooman.");
+    } else if (computerScore > humanScore) {
+        console.log("Computer wins!! Congrats to our Machine Overlords.");
+    } else {
+        console.log("It's a tie?!! How could this happen.");
+    }
+
+    humanScore = 0;
+    computerScore = 0;
+    rounds = 0;
+}
+
+playGame();
