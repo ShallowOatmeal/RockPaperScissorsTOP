@@ -59,11 +59,11 @@ function playGame() {
     }
 
     if (humanScore > computerScore) {
-        console.log("Human wins!! Congrats hooman.");
+        alert("Human wins!! Congrats hooman.");
     } else if (computerScore > humanScore) {
-        console.log("Computer wins!! Congrats to our Machine Overlords.");
+        alert("Computer wins!! Congrats to our Machine Overlords.");
     } else {
-        console.log("It's a tie?!! How could this happen.");
+        alert("It's a tie?!! How could this happen.");
     }
 
     humanScore = 0;
