@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: transparent;
+    border-style: none;
+    border-radius: 20px;
+}
+
+img {
+    max-height: 250px;
+    max-width: 250px;
+}
+
+.vs{
+    max-width: 85px;
+    max-height: 85px;
+    margin-bottom: 200px;
+}
+
+.rps-section{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+button:hover{
+    box-shadow: 5px 10px 40px lightgreen;
+}
+
+.human-choices, .robot-choices {
+    display:flex;
+}
+
+.fighters{
+    display: flex;
+    justify-content: center;
+}
